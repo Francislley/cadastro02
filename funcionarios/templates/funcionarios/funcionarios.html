@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro funcionarios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-header text-center">
+    <h1>Funcionarios</h1>
+  </div>
+
+    {% for func in all_funcionarios %}
+      <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <img src="{{ func.foto.url }}" class="img-responsive">
+                <h1>{{ func.nome }}</h1>
+                <p>Ramal: {{ func.ramal }}</p>
+              </div>
+            </div>
+      </div>
+    {% endfor %}
+</div>
+
+  <!-- {% if all_funcionarios %}
+    {% for func in all_funcionarios %}
+      <ul>
+        <li>Nome: {{ func.nome }}</li>
+        <li>Rama: {{ func.ramal }}</li>
+        <img src="{{ func.foto.url }}" width="100px">
+      </ul>
+    {% endfor %}
+  {% endif %} -->
+</body>
+</html>
